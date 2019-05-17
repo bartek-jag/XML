@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hurtownia SYSTEM "hurtownia.dtd">
+<hurtownia>
+    <napoje>
+        <napoj id="1" rodzaj="Sok">
+            <nazwa>Kubuś</nazwa>
+            <producent>Maspex</producent>
+            <dostawcaID>1</dostawcaID>
+            <gaz>niegazowany</gaz>
+            <ilosc>3500</ilosc>
+            <cena>2.1500</cena>
+            <opis>Nowe opakowanie</opis>
+        </napoj>
+        <napoj id="2" rodzaj="Sok">
+            <nazwa>Kubuś</nazwa>
+            <producent>Maspex</producent>
+            <dostawcaID>1</dostawcaID>
+            <gaz>niegazowany</gaz>
+            <ilosc>3500</ilosc>
+            <cena>2.1500</cena>
+            <nieaktualne/>
+        </napoj>
+        <napoj id="3" rodzaj="Napój">
+            <nazwa>Mirinda</nazwa>
+            <producent>Pepsi</producent>
+            <dostawcaID>2</dostawcaID>
+            <gaz>gazowany</gaz>
+            <ilosc>2000</ilosc>
+            <cena>2.9000</cena>
+        </napoj>
+        <napoj id="4" rodzaj="Sok">
+            <nazwa>Fortuna</nazwa>
+            <producent>Fortuna</producent>
+            <dostawcaID>3</dostawcaID>
+            <gaz>niegazowany</gaz>
+            <ilosc>1500</ilosc>
+            <cena>3.1500</cena>
+        </napoj>
+        <napoj id="5" rodzaj="Sok">
+            <nazwa>Fortuna</nazwa>
+            <producent>Fortuna</producent>
+            <dostawcaID>3</dostawcaID>
+            <gaz>niegazowany</gaz>
+            <ilosc>1000</ilosc>
+            <cena>3.2500</cena>
+        </napoj>
+        <napoj id="6" rodzaj="Sok">
+            <nazwa>Fortuna</nazwa>
+            <producent>Fortuna</producent>
+            <dostawcaID>3</dostawcaID>
+            <gaz>niegazowany</gaz>
+            <ilosc>3000</ilosc>
+            <cena>4.8000</cena>
+        </napoj>
+        <napoj id="7" rodzaj="Sok">
+            <nazwa>Fortuna</nazwa>
+            <producent>Fortuna</producent>
+            <dostawcaID>3</dostawcaID>
+            <gaz>niegazowany</gaz>
+            <ilosc>3000</ilosc>
+            <cena>2.7000</cena>
+        </napoj>
+        <napoj id="8" rodzaj="Woda">
+            <nazwa>Cisowianka</nazwa>
+            <producent>Cisowianka</producent>
+            <dostawcaID>3</dostawcaID>
+            <gaz>niegazowany</gaz>
+            <ilosc>4000</ilosc>
+            <cena>1.7000</cena>
+        </napoj>
+        <napoj id="9" rodzaj="Woda">
+            <nazwa>Cisowianka</nazwa>
+            <producent>Cisowianka</producent>
+            <dostawcaID>3</dostawcaID>
+            <gaz>lekkogazowany</gaz>
+            <ilosc>4000</ilosc>
+            <cena>1.7000</cena>
+        </napoj>
+        <napoj id="10" rodzaj="Woda">
+            <nazwa>Cisowianka</nazwa>
+            <producent>Cisowianka</producent>
+            <dostawcaID>3</dostawcaID>
+            <gaz>gazowany</gaz>
+            <ilosc>4000</ilosc>
+            <cena>1.7000</cena>
+        </napoj>
+        <napoj id="11" rodzaj="Piwo">
+            <nazwa>Tyskie</nazwa>
+            <producent>Kompania Piwowarska</producent>
+            <dostawcaID>4</dostawcaID>
+            <gaz>gazowany</gaz>
+            <ilosc>3000</ilosc>
+            <cena>2.0000</cena>
+        </napoj>
+        <napoj id="12" rodzaj="Piwo">
+            <nazwa>Lech</nazwa>
+            <producent>Kompania Piwowarska</producent>
+            <dostawcaID>4</dostawcaID>
+            <gaz>gazowany</gaz>
+            <ilosc>3200</ilosc>
+            <cena>2.0000</cena>
+        </napoj>
+        <napoj id="13" rodzaj="Piwo">
+            <nazwa>Tatra</nazwa>
+            <producent>Grupa Żywiec</producent>
+            <dostawcaID>4</dostawcaID>
+            <gaz>gazowany</gaz>
+            <ilosc>3200</ilosc>
+            <cena>1.8000</cena>
+        </napoj>
+        <napoj id="14" rodzaj="Piwo">
+            <nazwa>Tyskie</nazwa>
+            <producent>Kompania Piwowarska</producent>
+            <dostawcaID>4</dostawcaID>
+            <gaz>gazowany</gaz>
+            <ilosc>3000</ilosc>
+            <cena>2.0000</cena>
+        </napoj>
+        <napoj id="15" rodzaj="Napój">
+            <nazwa>Hoop Cola</nazwa>
+            <producent>Hoop</producent>
+            <dostawcaID>1</dostawcaID>
+            <gaz>gazowany</gaz>
+            <ilosc>2000</ilosc>
+            <cena>3.0000</cena>
+        </napoj>
+        <napoj id="16" rodzaj="Piwo">
+            <nazwa>Żywiec</nazwa>
+            <producent>Grupa Żywiec</producent>
+            <dostawcaID>4</dostawcaID>
+            <gaz>gazowany</gaz>
+            <ilosc>2000</ilosc>
+            <cena>2.5000</cena>
+        </napoj>
+    </napoje>
+    <dostawcy>
+        <dostawca id="1">
+            <imie>Bronisław</imie>
+            <nazwisko>Komar</nazwisko>
+            <email>bronek.komar@zywiec.pl</email>
+            <numerTelefonu>634345342</numerTelefonu>
+        </dostawca>
+        <dostawca id="2">
+            <imie>Paweł</imie>
+            <nazwisko>Gaweł</nazwisko>
+            <email>p.gawel@magazyny.pl</email>
+            <numerTelefonu>876655342</numerTelefonu>
+        </dostawca>
+        <dostawca id="3">
+            <imie>Kamil</imie>
+            <nazwisko>Jeż</nazwisko>
+            <email>jezyk.kamil@soki.pl</email>
+            <numerTelefonu>634354335</numerTelefonu>
+        </dostawca>
+        <dostawca id="4">
+            <imie>Jakub</imie>
+            <nazwisko>Kirkiewicz</nazwisko>
+            <email>jakub.kirki@hellmann.pl</email>
+            <numerTelefonu>637567662</numerTelefonu>
+        </dostawca>
+    </dostawcy>
+    &producenci;
+    &rodzaje;
+</hurtownia>
