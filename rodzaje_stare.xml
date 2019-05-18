@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!--<!DOCTYPE rodzaje SYSTEM "rodzaje.dtd">-->
+    <rodzaje>
+        <rodzaj podatek="0.05"></rodzaj>
+        <rodzaj>Napój</rodzaj>
+        <rodzaj podatek="0.22">Napój_energetyczny</rodzaj>
+        <rodzaj podatek="0.22">Piwo</rodzaj>
+        <rodzaj podatek="0.22">Wódka</rodzaj>
+        <rodzaj podatek="0.05">Nektar</rodzaj>
+        <rodzaj podatek="0.22">Woda</rodzaj>
+    </rodzaje>

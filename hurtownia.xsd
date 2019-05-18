@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+    <xsd:element name="hurtownia">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="napoje"/>
+                <xsd:element ref="dostawcy"/>
+                <xsd:element ref="producenci"/>
+                <xsd:element ref="rodzaje"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="napoje">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element maxOccurs="unbounded" ref="napoj"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="napoj">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="nazwa"/>
+                <xsd:element ref="producent"/>
+                <xsd:element ref="dostawcaID"/>
+                <xsd:element ref="gaz"/>
+                <xsd:element ref="ilosc"/>
+                <xsd:element ref="cena"/>
+            </xsd:sequence>
+            <xsd:attribute name="id" use="required" type="xsd:integer"/>
+            <xsd:attribute name="rodzaj" use="required" type="xsd:string"/>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="nazwa" type="xsd:string"/>
+    <xsd:element name="dostawcaID" type="xsd:integer"/>
+    <xsd:element name="gaz" type="xsd:string"/>
+    <xsd:element name="ilosc" type="xsd:integer"/>
+    <xsd:element name="cena" type="xsd:string"/>
+    <xsd:element name="dostawcy">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element maxOccurs="unbounded" ref="dostawca"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="dostawca">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="imie"/>
+                <xsd:element ref="nazwisko"/>
+                <xsd:element ref="email"/>
+                <xsd:element ref="numerTelefonu"/>
+            </xsd:sequence>
+            <xsd:attribute name="id" use="required" type="xsd:integer"/>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="imie" type="xsd:string"/>
+    <xsd:element name="nazwisko" type="xsd:string"/>
+    <xsd:element name="email" type="xsd:string"/>
+    <xsd:element name="numerTelefonu" type="xsd:string"/>
+    <xsd:element name="producenci">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element maxOccurs="unbounded" ref="producent"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="rodzaje">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element maxOccurs="unbounded" ref="rodzaj"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="rodzaj">
+        <xsd:complexType mixed="true">
+            <xsd:attribute name="podatek" use="required" type="xsd:string"/>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="producent" type="xsd:string"/>
+</xsd:schema>

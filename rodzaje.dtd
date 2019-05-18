@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!ELEMENT rodzaje (rodzaj)+>
+<!ELEMENT rodzaj ANY>
+<!ATTLIST rodzaj podatek CDATA "0.23">
+<!ATTLIST rodzaj nazwa ID #REQUIRED>
