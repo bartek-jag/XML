@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+    xmlns:grupy="http://grupy" xmlns:typy="http://typy" targetNamespace="http://grupy">
+    <xsd:import namespace="http://typy" schemaLocation="typy.xsd"/>
+
+    <xsd:group name="daneOsoby">
+        <xsd:sequence>
+            <xsd:element name="imie" type="typy:imieLubNazwisko" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="nazwisko" type="typy:imieLubNazwisko" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="email" type="xsd:string"/>
+            <xsd:element name="numerTelefonu" type="typy:telefon"/>
+        </xsd:sequence>
+    </xsd:group>
+
+    <xsd:group name="daneFirmy">
+        <xsd:sequence>
+            <xsd:element name="nazwa" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="nip" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="numerTelefonu" type="typy:telefon"/>
+        </xsd:sequence>
+    </xsd:group>
+
+</xsd:schema>

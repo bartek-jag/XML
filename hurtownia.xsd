@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" 
+    xmlns:typy="http://typy" 
+    xmlns:grupy="http://grupy">
+    <xsd:import namespace="http://typy" schemaLocation="typy.xsd"/>
+    <xsd:import namespace="http://grupy" schemaLocation="grupy.xsd"/>
     <xsd:element name="hurtownia">
         <xsd:complexType>
             <xsd:sequence>
@@ -9,7 +13,29 @@
                 <xsd:element ref="rodzaje"/>
             </xsd:sequence>
         </xsd:complexType>
+
+        <xsd:key name="napojID">
+            <xsd:selector xpath="napoje/napoj"/>
+            <xsd:field xpath="@id"/>
+        </xsd:key>
+        <xsd:key name="producentNazwa">
+            <xsd:selector xpath="producenci/producent"/>
+            <xsd:field xpath="."/>
+        </xsd:key>
+        <xsd:key name="dostawcaID">
+            <xsd:selector xpath="dostawcy/dostawca"/>
+            <xsd:field xpath="@id"/>
+        </xsd:key>
+        <xsd:keyref name="refDostawca" refer="dostawcaID">
+            <xsd:selector xpath="napoje/rzeczownik"/>
+            <xsd:field xpath="rodzaj"/>
+        </xsd:keyref>
+        <xsd:keyref name="refProducent" refer="producentNazwa">
+            <xsd:selector xpath="napoje/napoj"/>
+            <xsd:field xpath="producent"/>
+        </xsd:keyref>
     </xsd:element>
+
     <xsd:element name="napoje">
         <xsd:complexType>
             <xsd:sequence>
@@ -17,65 +43,101 @@
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
-    <xsd:element name="napoj">
-        <xsd:complexType>
-            <xsd:sequence>
-                <xsd:element ref="nazwa"/>
-                <xsd:element ref="producent"/>
-                <xsd:element ref="dostawcaID"/>
-                <xsd:element ref="gaz"/>
-                <xsd:element ref="ilosc"/>
-                <xsd:element ref="cena"/>
-            </xsd:sequence>
-            <xsd:attribute name="id" use="required" type="xsd:integer"/>
-            <xsd:attribute name="rodzaj" use="required" type="xsd:string"/>
-        </xsd:complexType>
-    </xsd:element>
-    <xsd:element name="nazwa" type="xsd:string"/>
-    <xsd:element name="dostawcaID" type="xsd:integer"/>
-    <xsd:element name="gaz" type="xsd:string"/>
-    <xsd:element name="ilosc" type="xsd:integer"/>
-    <xsd:element name="cena" type="xsd:string"/>
+
+    <xsd:element name="napoj" type="pelneDaneNapoju"/>
+    <xsd:complexType name="daneNapoju">
+        <xsd:sequence>
+            <xsd:element name="nazwa" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+            <xsd:element name="producent" type="xsd:string"/>
+            <xsd:element name="dostawcaID" type="xsd:integer"/>
+            <xsd:element name="gaz" type="xsd:NCName"/>
+            <xsd:element name="ilosc" type="xsd:nonNegativeInteger"/>
+            <xsd:element name="cena" type="xsd:decimal"/>
+            <xsd:element name="kodyKreskowe" type="typy:kody" minOccurs="0" maxOccurs="1"/>
+            <xsd:element name="opis" type="xsd:string" minOccurs="0" maxOccurs="1"/>
+        </xsd:sequence>
+        <xsd:attribute name="nieaktualne" use="optional" type="xsd:boolean"/>
+        <xsd:attribute name="id" use="required" type="xsd:integer"/>
+        <xsd:attribute name="rodzaj" use="required" type="xsd:NCName"/>
+    </xsd:complexType>
+    <xsd:complexType name="pelneDaneNapoju">
+        <xsd:complexContent>
+            <xsd:extension base="daneNapoju">
+                <xsd:sequence>
+                    <xsd:element name="notatka" type="typy:notka" minOccurs="0"/>
+                </xsd:sequence>
+            </xsd:extension>
+        </xsd:complexContent>
+    </xsd:complexType>
+
+
     <xsd:element name="dostawcy">
         <xsd:complexType>
             <xsd:sequence>
-                <xsd:element maxOccurs="unbounded" ref="dostawca"/>
+                <xsd:element name="dostawca" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:choice>
+                            <xsd:group ref="grupy:daneOsoby"/>
+                            <xsd:group ref="grupy:daneFirmy"/>
+                        </xsd:choice>
+                        <xsd:attribute name="id" use="required"/>
+                    </xsd:complexType>
+                </xsd:element>
             </xsd:sequence>
         </xsd:complexType>
+        <xsd:unique name="emaileDostawców">
+            <xsd:selector xpath="dostawca"/>
+            <xsd:field xpath="email"/>
+        </xsd:unique>
     </xsd:element>
-    <xsd:element name="dostawca">
-        <xsd:complexType>
-            <xsd:sequence>
-                <xsd:element ref="imie"/>
-                <xsd:element ref="nazwisko"/>
-                <xsd:element ref="email"/>
-                <xsd:element ref="numerTelefonu"/>
-            </xsd:sequence>
-            <xsd:attribute name="id" use="required" type="xsd:integer"/>
-        </xsd:complexType>
-    </xsd:element>
-    <xsd:element name="imie" type="xsd:string"/>
-    <xsd:element name="nazwisko" type="xsd:string"/>
-    <xsd:element name="email" type="xsd:string"/>
-    <xsd:element name="numerTelefonu" type="xsd:string"/>
+
     <xsd:element name="producenci">
         <xsd:complexType>
             <xsd:sequence>
-                <xsd:element maxOccurs="unbounded" ref="producent"/>
+                <xsd:element name="producent" maxOccurs="unbounded" type="xsd:string"/>
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
+
     <xsd:element name="rodzaje">
         <xsd:complexType>
             <xsd:sequence>
-                <xsd:element maxOccurs="unbounded" ref="rodzaj"/>
+                <xsd:element name="rodzaj" maxOccurs="unbounded">
+                    <xsd:complexType mixed="true">
+                        <xsd:attribute name="podatek">
+                            <xsd:simpleType>
+                                <xsd:union>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="typy:wartoscPodatku"/>
+                                    </xsd:simpleType>
+
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:enumeration value="brak danych"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:union>
+                            </xsd:simpleType>
+                        </xsd:attribute>
+                    </xsd:complexType>
+                </xsd:element>
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
-    <xsd:element name="rodzaj">
-        <xsd:complexType mixed="true">
-            <xsd:attribute name="podatek" use="required" type="xsd:string"/>
-        </xsd:complexType>
-    </xsd:element>
-    <xsd:element name="producent" type="xsd:string"/>
+
 </xsd:schema>
+
+
+
+<!--
+np. restrykcje, wzorzec, lista, grupy, elementów, wartości unikatowe, grupy elementów itd.
+
+RESTRYKCJE, WZORZEC, GRUPY, UNIKATOWE, SEQUENCE, UNIE, KLUCZE, REFERENCJE KLUCZY, CHOICE, EXTENSION, LISTY
+IMPORT INNEJ PRZESTRZENI NAZW, POWIĄZANIA, ENUMERACJE
+własności elementów:
+minOccurst, maxOccurs,
+własności atrybutów:
+optional, required
+
+TYPY wbudowane: integer, string, decimal, NCname, nonNegativeInteger, boolean
+-->

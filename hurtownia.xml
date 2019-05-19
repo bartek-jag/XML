@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE hurtownia SYSTEM "hurtownia.dtd">
-<hurtownia>
+<hurtownia xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="hurtownia.xsd">
     <napoje>
         <napoj id="1" rodzaj="Sok">
             <nazwa>Kubuś</nazwa>
@@ -11,14 +10,13 @@
             <cena>2.1500</cena>
             <opis>Nowe opakowanie</opis>
         </napoj>
-        <napoj id="2" rodzaj="Sok">
+        <napoj id="2" rodzaj="Sok" nieaktualne="true">
             <nazwa>Kubuś</nazwa>
             <producent>Maspex</producent>
             <dostawcaID>1</dostawcaID>
             <gaz>niegazowany</gaz>
             <ilosc>3500</ilosc>
             <cena>2.1500</cena>
-            <nieaktualne/>
         </napoj>
         <napoj id="3" rodzaj="Napój">
             <nazwa>Mirinda</nazwa>
@@ -27,6 +25,7 @@
             <gaz>gazowany</gaz>
             <ilosc>2000</ilosc>
             <cena>2.9000</cena>
+            <kodyKreskowe>1234567890123 12345678</kodyKreskowe>
         </napoj>
         <napoj id="4" rodzaj="Sok">
             <nazwa>Fortuna</nazwa>
@@ -158,7 +157,28 @@
             <email>jakub.kirki@hellmann.pl</email>
             <numerTelefonu>637567662</numerTelefonu>
         </dostawca>
+        <dostawca id="5">
+            <nazwa>SuperDostawy Sp. z.o.o</nazwa>
+            <nip>1234567890</nip>
+            <numerTelefonu>840285923</numerTelefonu>
+        </dostawca>
     </dostawcy>
-    &producenci;
-    &rodzaje;
+    <producenci>
+        <producent>Fortuna</producent>
+        <producent>Cisowianka</producent>
+        <producent>Grupa Żywiec</producent>
+        <producent>Kompania Piwowarska</producent>
+        <producent>Hoop</producent>
+        <producent>Maspex</producent>
+        <producent>Pepsi</producent>
+    </producenci>
+    <rodzaje>
+        <rodzaj podatek="0.05"></rodzaj>
+        <rodzaj>Napój</rodzaj>
+        <rodzaj podatek="0.22">Napój_energetyczny</rodzaj>
+        <rodzaj podatek="0.22">Piwo</rodzaj>
+        <rodzaj podatek="0.22">Wódka</rodzaj>
+        <rodzaj podatek="0.05">Nektar</rodzaj>
+        <rodzaj podatek="0.22">Woda</rodzaj>
+    </rodzaje>
 </hurtownia>
