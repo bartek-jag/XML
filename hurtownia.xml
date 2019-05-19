@@ -173,7 +173,7 @@
         <producent>Pepsi</producent>
     </producenci>
     <rodzaje>
-        <rodzaj podatek="0.05"></rodzaj>
+        <rodzaj podatek="0.05">Sok</rodzaj>
         <rodzaj>Napój</rodzaj>
         <rodzaj podatek="0.22">Napój_energetyczny</rodzaj>
         <rodzaj podatek="0.22">Piwo</rodzaj>

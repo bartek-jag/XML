@@ -3,6 +3,9 @@
     xmlns:typy="http://typy" targetNamespace="http://typy">
 
     <xsd:simpleType name="wartoscPodatku">
+        <xsd:annotation>
+            <xsd:documentation>Wartość podatku VAT wyrażona ułamkiem</xsd:documentation>
+        </xsd:annotation>
         <xsd:restriction base="xsd:decimal">
             <xsd:pattern value="0.[0-9][0-9]"/>
         </xsd:restriction>
@@ -10,38 +13,55 @@
 
     <xsd:simpleType name="imieLubNazwisko">
         <xsd:restriction base="xsd:NCName">
-            <xsd:minLength value="3" />
-            <xsd:maxLength value="25" />
+            <xsd:minLength value="3"/>
+            <xsd:maxLength value="25"/>
         </xsd:restriction>
     </xsd:simpleType>
 
     <xsd:simpleType name="telefon">
         <xsd:restriction base="xsd:string">
-            <xsd:minLength value="9" />
-            <xsd:maxLength value="15" />
+            <xsd:minLength value="9"/>
+            <xsd:maxLength value="15"/>
         </xsd:restriction>
     </xsd:simpleType>
 
     <xsd:simpleType name="notka">
         <xsd:restriction base="xsd:string">
-            <xsd:maxLength value="120" />
+            <xsd:maxLength value="120"/>
         </xsd:restriction>
     </xsd:simpleType>
 
     <xsd:simpleType name="kodKreskowy">
+        <xsd:annotation>
+            <xsd:documentation>EAN-13 lub EAN-8</xsd:documentation>
+        </xsd:annotation>
         <xsd:restriction base="xsd:string">
             <xsd:pattern value="[0-9]{13}|[0-9]{8}"/>
         </xsd:restriction>
     </xsd:simpleType>
 
     <xsd:simpleType name="listaKodow">
-        <xsd:list itemType="typy:kodKreskowy" />
+        <xsd:list itemType="typy:kodKreskowy"/>
     </xsd:simpleType>
 
     <xsd:simpleType name="kody">
         <xsd:restriction base="typy:listaKodow">
             <xsd:minLength value="1"/>
             <xsd:maxLength value="50"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="rodzajeGazu">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="niegazowany"/>
+            <xsd:enumeration value="lekkogazowany"/>
+            <xsd:enumeration value="gazowany"/>
+        </xsd:restriction>
+    </xsd:simpleType>
+
+    <xsd:simpleType name="nip">
+        <xsd:restriction base="xsd:string">
+            <xsd:length value="10"/>
         </xsd:restriction>
     </xsd:simpleType>
 

@@ -6,7 +6,7 @@
 <p>
     <b>Praktyczne użycie własności (0,25 pkt. za każdą różny, max. 4,5 pkt.), np. restrykcje, wzorzec, lista, grupy, elementów, wartości unikatowe, grupy elementów itd.</b>
     <br/>
-    <i>restriction, pattern, group, unique, sequence, union, key, keyref, choice, extension, list, import, ref, enumeration, minOccurs, maxOccurs, use: optional, use: required</i>
+    <i>restriction, pattern, group, unique, sequence, union, key, keyref, choice, extension, list, import, ref, enumeration, minOccurs, maxOccurs, annotation, documentation, use: optional, use: required</i>
 </p>
 
 <p>
