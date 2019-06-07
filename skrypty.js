@@ -1,19 +1,21 @@
-function kolor(nazwa, id) {
-    var allElements = document.getElementsByTagName('tr');
-    var producent = document.getElementById(id);
+function kolor(nazwa) {
+    var wiersze = document.getElementsByTagName('tr');
+    var producent = document.getElementById(nazwa);
 
+    // zmiania stylu u¿ytego elementu
     if (producent.classList.contains('wybrany'))
         producent.classList.remove('wybrany');
     else
         producent.classList.add('wybrany');
 
-	for (var i = 0, n = allElements.length; i < n; i++) {
-		if (allElements[i].getAttribute('producent') !== null) {
-			if (allElements[i].getAttribute('producent') == nazwa) {
-				if (allElements[i].classList.contains('wybrany'))
-					allElements[i].classList.remove('wybrany');
+    //zmiania stylu wierszy bêd¹cych w relacji z wcisniêtym elementem
+    for (var i = 0, n = wiersze.length; i < n; i++) {
+        if (wiersze[i].getAttribute('producent') !== null) {
+            if (wiersze[i].getAttribute('producent') == nazwa) {
+                if (wiersze[i].classList.contains('wybrany'))
+                    wiersze[i].classList.remove('wybrany');
 				else
-					allElements[i].classList.add('wybrany');
+                    wiersze[i].classList.add('wybrany');
 			}
 		}
 	}

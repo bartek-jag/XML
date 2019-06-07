@@ -1,8 +1,9 @@
-body {
+ï»¿body {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     text-align: center;
     /* Background pattern from Toptal Subtle Patterns */
     background-image: url(paper.png);
+    /*Licznik dla tabeli producentow*/
     counter-reset: licznik;
 }
 
@@ -10,42 +11,42 @@ h1 {
     text-shadow: 2px 2px #505050;
 }
 
-table {
+#napoje {
     border-collapse: collapse;
     border-color: dimgrey;
     width: 100%;
 }
 
-#napoje td, #napoje th {
-    border: 1px solid #ddd;
-    padding: 8px;
+    #napoje td, #napoje th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
 }
 
-    table tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
+table tr:hover {
+    background-color: #ddd;
+}
 
-    table tr:hover {
-        background-color: #ddd;
-    }
+table th, table #razemSztuk, table #sredniaCena {
+    font-size: medium;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-image: linear-gradient(#4CAF50, #5CBF60);
+    background-color: #4CAF50;
+    color: white;
+    text-shadow: 1px, 1px, #505050;
+}
 
-    table th, table #razemSztuk, table #sredniaCena {
-        font-size: medium;
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: center;
-        background-image: linear-gradient(#4CAF50, #5CBF60);
-        background-color: #4CAF50;
-        color: white;
-        text-shadow: 1px, 1px, #505050;
-    }
-
-    table .id {
-        font-weight: bold;
-        text-align: center;
-        background-color: darkgray;
-        width: 30px;
-    }
+table .id {
+    font-weight: bold;
+    text-align: center;
+    background-color: darkgray;
+    width: 30px;
+}
 
 .aktualneObraz {
     height: 30px;
@@ -68,8 +69,7 @@ table {
     content: " sztuk";
 }
 
-#podzia³ {
-    width: 100%;
+#podziaï¿½ {
 }
 
 #podzial div {
@@ -79,7 +79,7 @@ table {
 #dostawcy {
     display: inline;
     float: left;
-    width:60%;
+    width: 60%;
 }
 
 #producenci {
@@ -94,23 +94,17 @@ table {
     border-collapse: collapse;
 }
 
-#dostawcy td, #producenci td {
+#dostawcy td:not(.id), #producenci td:not(.id) {
     padding: 8px;
+    width: 900px;
 }
 
+#dostawcy .id, #producenci .id {
+    width: 60px;
+}
+
+/*styl aplikowany przez fukcje kolor()*/
 .wybrany {
     font-weight: bold;
     color: blue;
 }
-
-
-
-/*
-
-    font-size, font-weight, background-color, text-shadow, text-align,
-    linear-gradient, background-image, padding, ::before, klasy, idendyfikatory
-
-
-    counter,
-
-*/
