@@ -1,0 +1,116 @@
+body {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    text-align: center;
+    /* Background pattern from Toptal Subtle Patterns */
+    background-image: url(paper.png);
+    counter-reset: licznik;
+}
+
+h1 {
+    text-shadow: 2px 2px #505050;
+}
+
+table {
+    border-collapse: collapse;
+    border-color: dimgrey;
+    width: 100%;
+}
+
+#napoje td, #napoje th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+    table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    table tr:hover {
+        background-color: #ddd;
+    }
+
+    table th, table #razemSztuk, table #sredniaCena {
+        font-size: medium;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-image: linear-gradient(#4CAF50, #5CBF60);
+        background-color: #4CAF50;
+        color: white;
+        text-shadow: 1px, 1px, #505050;
+    }
+
+    table .id {
+        font-weight: bold;
+        text-align: center;
+        background-color: darkgray;
+        width: 30px;
+    }
+
+.aktualneObraz {
+    height: 30px;
+    width: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lp::before {
+    counter-increment: licznik;
+    content: counter(licznik);
+}
+
+#razemSztuk span:before {
+    content: "Razem: ";
+}
+
+#razemSztuk span:after {
+    content: " sztuk";
+}
+
+#podzia³ {
+    width: 100%;
+}
+
+#podzial div {
+    margin: 0 0;
+}
+
+#dostawcy {
+    display: inline;
+    float: left;
+    width:60%;
+}
+
+#producenci {
+    display: inline;
+    float: left;
+    width: 40%;
+}
+
+#podzial div table {
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+#dostawcy td, #producenci td {
+    padding: 8px;
+}
+
+.wybrany {
+    font-weight: bold;
+    color: blue;
+}
+
+
+
+/*
+
+    font-size, font-weight, background-color, text-shadow, text-align,
+    linear-gradient, background-image, padding, ::before, klasy, idendyfikatory
+
+
+    counter,
+
+*/

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="hurtownia.xsl"?>
 <hurtownia xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="hurtownia.xsd">
     <napoje>
         <napoj id="1" rodzaj="Sok">
@@ -6,6 +7,7 @@
             <producent>Maspex</producent>
             <dostawcaID>1</dostawcaID>
             <gaz>niegazowany</gaz>
+          <smak>jabłkowy</smak>
             <ilosc>3500</ilosc>
             <cena>2.1500</cena>
             <opis>Nowe opakowanie</opis>
@@ -15,6 +17,7 @@
             <producent>Maspex</producent>
             <dostawcaID>1</dostawcaID>
             <gaz>niegazowany</gaz>
+          <smak>bananowy</smak>
             <ilosc>3500</ilosc>
             <cena>2.1500</cena>
         </napoj>
@@ -23,6 +26,7 @@
             <producent>Pepsi</producent>
             <dostawcaID>2</dostawcaID>
             <gaz>gazowany</gaz>
+          <smak>gruszkowy</smak>
             <ilosc>2000</ilosc>
             <cena>2.9000</cena>
             <kodyKreskowe>1234567890123 12345678</kodyKreskowe>
@@ -32,6 +36,7 @@
             <producent>Fortuna</producent>
             <dostawcaID>3</dostawcaID>
             <gaz>niegazowany</gaz>
+          <smak>pomarańczowy</smak>
             <ilosc>1500</ilosc>
             <cena>3.1500</cena>
         </napoj>
@@ -40,6 +45,7 @@
             <producent>Fortuna</producent>
             <dostawcaID>3</dostawcaID>
             <gaz>niegazowany</gaz>
+          <smak>wieloowocowy</smak>
             <ilosc>1000</ilosc>
             <cena>3.2500</cena>
         </napoj>
@@ -48,6 +54,7 @@
             <producent>Fortuna</producent>
             <dostawcaID>3</dostawcaID>
             <gaz>niegazowany</gaz>
+          <smak>jabłko-marchew</smak>
             <ilosc>3000</ilosc>
             <cena>4.8000</cena>
         </napoj>
@@ -56,6 +63,7 @@
             <producent>Fortuna</producent>
             <dostawcaID>3</dostawcaID>
             <gaz>niegazowany</gaz>
+          <smak>truskawka-jabłko</smak>
             <ilosc>3000</ilosc>
             <cena>2.7000</cena>
         </napoj>

@@ -82,6 +82,7 @@
                 </xsd:annotation>
             </xsd:element>
             <xsd:element name="gaz" type="typy:rodzajeGazu"/>
+			<xsd:element name="smak" type="xsd:string" minOccurs="0" maxOccurs="1"/>
             <xsd:element name="ilosc" type="xsd:nonNegativeInteger"/>
             <xsd:element name="cena" type="xsd:decimal">
                 <xsd:annotation>
@@ -178,5 +179,4 @@
             </xsd:sequence>
         </xsd:complexType>
     </xsd:element>
-
 </xsd:schema>
