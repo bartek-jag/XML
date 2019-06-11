@@ -11,13 +11,13 @@ h1 {
     text-shadow: 2px 2px #505050;
 }
 
-#napoje {
+#tabelaNapoje {
     border-collapse: collapse;
     border-color: dimgrey;
     width: 100%;
 }
 
-    #napoje td, #napoje th {
+    #tabelaNapoje td, #tabelaNapoje th {
         border: 1px solid #ddd;
         padding: 8px;
     }
@@ -69,9 +69,6 @@ table .id {
     content: " sztuk";
 }
 
-#podzia� {
-}
-
 #podzial div {
     margin: 0 0;
 }
@@ -94,12 +91,12 @@ table .id {
     border-collapse: collapse;
 }
 
-#dostawcy td:not(.id), #producenci td:not(.id) {
+#tabelaDostawcyLudzie tr td:not(.id), #tabelaProducenci tr td:not(.id), #tabelaDostawcyFirmy tr td:not(.id) {
     padding: 8px;
     width: 900px;
 }
 
-#dostawcy .id, #producenci .id {
+#tabelaDostawcyLudzie tr .id, #tabelaProducenci tr .id, #tabelaDostawcyFirmy tr td .id {
     width: 60px;
 }
 

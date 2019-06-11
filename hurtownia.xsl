@@ -7,17 +7,16 @@
 	<xsl:import href="dostawcy.xsl"/>
 	<xsl:import href="producenci.xsl"/>
 
-	<xsl:output method="xhtml" indent="yes" encoding="utf-8"/>
+	<xsl:output method="xhtml" doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd" encoding="utf-8" indent="yes" omit-xml-declaration="yes"/>
 
 	<xsl:template match="/hurtownia">
-		<html lang="pl-PL">
+		<html xmlns="http://www.w3.org/1999/xhtml" lang="pl-PL">
 			<head>
 				<link rel="stylesheet" href="style.css"/>
 				<link rel="shortcut icon" href="fav.png" type="image/x-icon"/>
-				<meta charset="utf-8"/>
 				<meta name="author" content="Bartosz Jagłowski"/>
 				<title>Hurtownia napojów</title>
-				<script src="skrypty.js"/>
+				<script src="skrypty.js" type="text/javascript" />
 			</head>
 			<body>
 

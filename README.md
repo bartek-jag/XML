@@ -4,7 +4,7 @@
 
 
 <hr/>
-<h3>CSS (3 pkt.)</h3>
+<h2>CSS (3 pkt.)</h2>
 <p>
 	<b>Estetyka wyglądu pliku XML przy użyciu pliku CSS (0,5 pkt.).</b>
 </p>
@@ -22,7 +22,7 @@
 
 
 <hr/>
-<h3>XSLT (5 pkt.)</h3>
+<h2>XSLT (5 pkt.)</h2>
 <p>
 	<b>Utworzenie przydatnego arkusza przekszatłcającego na inny plik XML lub HTML lub xHTML (w przypadku XML max. 0,5 pkt. w przypadku HTML/xHTML max. 1,5 pkt.). Przy ocenianiu pod uwagę zostanie wzięta estetyka utworzonego pliku (wygląd, użycie CSS w przypadku HTML itp.), użycie różnych elemntów w HTML np. odsyłacze oraz to czy plik przechodzi walidację (walidator w przypadku HTML).</b>
 </p>
@@ -48,7 +48,7 @@
 
 
 <hr/>
-<h3>XML-Schema (6 pkt.)</h3>
+<h2>XML-Schema (6 pkt.)</h2>
 <p>
 	<b>Praktyczne użycie własności (0,25 pkt. za każdą różny, max. 4,5 pkt.), np. restrykcje, wzorzec, lista, grupy, elementów, wartości unikatowe, grupy elementów itd.</b>
 	<br/>
@@ -63,4 +63,55 @@
 	<b>Powinien walidować dokument.</b>
 	<br/>
 	<i>xmllint --schema hurtownia.xsd hurtownia.xml --noout</i>
+</p>
+
+
+
+<hr/>
+<h2>DOM/SAX (5 pkt.)</h2>
+<p>
+    <b>Stworzenie przydatnego programu, który będzie wykonywał operację na pliku XML z użyciem DOM i/lub insterfejsu SAX i/lub StAX (max. 1,5 pkt.).</b><br/>
+
+</p>
+<p>
+    <b>Wykorzystnie metod, która wykorzystuje model DOM (np. biblioteka Xerces) i/lub SAX i/lub StAX (0,25 pkt. za każdy różny, max. 3,5 pkt.). Nie liczymy metod pobierających, zapisujących dane oraz odpowiadających za konfigurację.</b><br/>
+    <i>getElementsByTagName,
+	getNodeType,
+        hasAttribute,
+        getChildNodes,
+        setTextContent,
+        removeAttribute,
+        getTextContent,
+        appendChild,
+        setAttribute,
+        getParentNode,
+        cloneNode,
+        getElementByTagNameNS,
+        isEqualNode,
+        insertBefore,
+        getFirstChild,
+        getAttributeNode,
+        setValue
+        <br/>
+        ========JavaScript DOM========
+        <br/>
+getAttribute
+getElementsByTagName
+getElementById
+classList.add
+classList.remove
+classList.contains
+    </i>
+</p>
+<p>
+    <b>Deaktywuj.java</b><br/>
+    <i>Użycie: java Deaktywuj &lt;id napoju&gt;</i>
+</p>
+<p>
+    <b>DodajProducenta.java</b><br/>
+    <i>Użycie: java DodajProducenta &lt;nazwa&gt;</i>
+</p>
+<p>
+    <b>DodajSumy.java</b><br/>
+    <i>Użycie: java DodajSumy</i>
 </p>
